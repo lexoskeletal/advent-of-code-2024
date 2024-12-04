@@ -28,6 +28,7 @@ numcolumns=len(data[0])
 #part 1
 def hasxmas(x,y,direction):
     dx,dy=direction
+
     #enumerate returns both index and character i.e. (0,'X') so on
     for index, char in enumerate("XMAS"): 
         new_x= x+index*dx
@@ -41,7 +42,6 @@ def hasxmas(x,y,direction):
     return True
 
 #check every direction in every cell
-
 count=0
 for rows in range(numrows):
     for columns in range(numcolumns):
