@@ -3,7 +3,9 @@ data=open('day1input.txt','r').read().split('\n')
 list1=[]
 list2=[]
 for line in data:
-    if line.strip(): #skip empty lines
+
+    #skip empty lines
+    if line.strip(): 
         column1,column2=line.split('   ')
         list1.append(int(column1))
         list2.append(int(column2))

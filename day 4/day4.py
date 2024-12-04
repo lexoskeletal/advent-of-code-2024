@@ -32,7 +32,9 @@ def hasxmas(x,y,direction):
     for index, char in enumerate("XMAS"): 
         new_x= x+index*dx
         new_y=y+index*dy
-        if not (0<=new_x<numrows and 0<=new_y<numcolumns): #out of bound condition
+
+        #out of bound condition
+        if not (0<=new_x<numrows and 0<=new_y<numcolumns): 
             return False
         if data[new_x][new_y]!=char:
             return False
@@ -50,9 +52,13 @@ print(count)
 
 #part 2
 def xshapedmas(x,y):
-    if not (0<x<numrows-1 and 0<y<numcolumns-1): #centre may go out of range checking diagonals
+
+    #centre may go out of range checking diagonals
+    if not (0<x<numrows-1 and 0<y<numcolumns-1): 
         return False
-    if data[x][y]!="A": #if centre isn't A
+
+    #if centre isn't A
+    if data[x][y]!="A": 
         return False
     
     #checking diagonals

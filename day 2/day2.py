@@ -20,7 +20,9 @@ def checksafe(int_sequence):
             increasing=True
         if level_difference<0:
             decreasing=True
-        if increasing==True and decreasing==True: #if both, sequence is unsafe
+            
+        #if both, sequence is unsafe
+        if increasing==True and decreasing==True: 
             return False
         if abs(level_difference)>3 or abs(level_difference)<1:
             return False
