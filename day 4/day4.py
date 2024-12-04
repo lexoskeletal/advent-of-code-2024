@@ -25,6 +25,7 @@ for dx in range(-1,2):
 numrows=len(data)
 numcolumns=len(data[0])
 
+#part 1
 def hasxmas(x,y,direction):
     dx,dy=direction
     #enumerate returns both index and character i.e. (0,'X') so on
@@ -45,7 +46,9 @@ for rows in range(numrows):
         for direction in directions:
             count+=hasxmas(rows,columns,direction)
 
+print(count)
 
+#part 2
 def xshapedmas(x,y):
     if not (0<x<numrows-1 and 0<y<numcolumns-1): #centre may go out of range checking diagonals
         return False
@@ -65,9 +68,4 @@ for rows in range(numrows):
     for columns in range(numcolumns):
         countx+=xshapedmas(rows,columns)
 
-print(count)
 print(countx)
-
-
-
-
