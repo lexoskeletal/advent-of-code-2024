@@ -3,7 +3,6 @@ data = open('day4input.txt','r').read().strip().split('\n')
 """
 generate directions
 
-
 -1 indicates go back on x-axis or y-axis (left or down)
  0 indicated stay in place x-axis or y-axis (or both, i.e. (0,0) means no movement)
  1 indicates go forward x-axis or y-axis (right or up)
