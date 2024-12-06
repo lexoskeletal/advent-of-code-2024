@@ -27,7 +27,6 @@ legalmidpagesum=0
 
 #for part 2
 incorrectpages=[]
-
 for updatedpages in allupdatedpages:
     legal,midpage=follows_rules(updatedpages)
     if legal:
@@ -56,7 +55,6 @@ def bubble_sort_on_drugs(pages):
             return pages[len(pages)//2]
 
 correctedmidpagesum=0
-
 for pages in incorrectpages:
     midpage=bubble_sort_on_drugs(pages)
     correctedmidpagesum+=midpage
