@@ -44,7 +44,7 @@ def bubble_sort_on_drugs(pages):
         is_sorted=True
         for i in range(len(pages)-1):
 
-            #out of order
+            #out of order condition
 
             #only works if each page has a rule associated with all other pages 
             if((pages[i+1],pages[i]) in rules):
