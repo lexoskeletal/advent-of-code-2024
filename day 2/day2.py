@@ -3,19 +3,14 @@ data=open('day2input.txt','r').read().split('\n')
 safe_sequences=0
 dampened_safe_sequence=0
 
-def splitconvert(line, int_sequence):
-    string_sequence=line.split(' ')
-    for i in range(len(string_sequence)):
-        int_sequence.append(int(string_sequence[i]))
-
-def checksafe(int_sequence):
+def checksafe(sequence):
 
     #to check if sequence is increasing or decreasing
     increasing=False
     decreasing=False
 
-    for i in range(len(int_sequence)-1):
-        level_difference=int_sequence[i+1]-int_sequence[i]
+    for i in range(len(sequence)-1):
+        level_difference=sequence[i+1]-sequence[i]
         if level_difference>0:
             increasing=True
         if level_difference<0:
@@ -28,28 +23,29 @@ def checksafe(int_sequence):
             return False
     return True
 
-def dampener(int_sequence):
-    for i in range(len(int_sequence)):
+def dampener(sequence):
+    for i in range(len(sequence)):
 
         #delete an element, make copy
-        dampened_set=int_sequence[:i]+int_sequence[i+1:] 
+        dampened_set=sequence[:i]+sequence[i+1:] 
         if checksafe(dampened_set):
             return True
     return False
 
-
 for line in data:
     if line.strip(): 
-        int_sequence=[]
-        splitconvert(line,int_sequence)
+
+        #map() function is used to apply a function to every item of an iterable
+        #map meeds to be converted back to list
+        sequence=list(map(int,line.split(' ')))
+
         #part1
-        if checksafe(int_sequence):
+        if checksafe(sequence):
             safe_sequences+=1
 
         #part 2
-        if dampener(int_sequence):
+        if dampener(sequence):
             dampened_safe_sequence+=1
-
 
 print(safe_sequences)
 print(dampened_safe_sequence)
